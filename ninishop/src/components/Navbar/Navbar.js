@@ -2,36 +2,33 @@ import React from 'react';
 import {
   Nav,
   NavLink,
-  Bars,
   NavMenu,
   NavBtn,
   NavBtnLink
 } from './Navbar-elements';
 
 const Navbar = () => {
+  const miVariable = 4;
   return (
-    <>
       <Nav>
         <NavLink to='/'>
           <img src='#aun-no#' alt='logo' />
         </NavLink>
-        <Bars />
         <NavMenu>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/about' >
             nosotros
           </NavLink>
-          <NavLink to='/' activeStyle>
+          <NavLink to='/products' >
             productos
           </NavLink>
-          <NavLink to='/' activeStyle>
-            contacto
+          <NavLink to='/contacts' >
+            CONTACTO
           </NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/'>Donate</NavBtnLink>
+          <NavBtnLink to='/donate'>Donate</NavBtnLink>
         </NavBtn>
       </Nav>
-    </>
   );
 };
 
