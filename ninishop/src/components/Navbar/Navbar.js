@@ -4,11 +4,11 @@ import {
   NavLink,
   NavMenu,
   NavBtn,
-  NavBtnLink
+  NavBtnLink,
 } from './Navbar-elements';
+import { Iconito } from '../CartWidjet';
 
 const Navbar = () => {
-  const miVariable = 4;
   return (
       <Nav>
         <NavLink to='/'>
@@ -22,12 +22,13 @@ const Navbar = () => {
             productos
           </NavLink>
           <NavLink to='/contacts' >
-            CONTACTO
+            contacto
           </NavLink>
         </NavMenu>
         <NavBtn>
           <NavBtnLink to='/donate'>Donate</NavBtnLink>
         </NavBtn>
+        <Iconito />
       </Nav>
   );
 };
