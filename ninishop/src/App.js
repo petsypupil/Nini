@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/Items/ItemListContainer';
 import ItemCount from './components/ItemCount';
 
 
