@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ItemListContainer from './components/Items/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/Items/ItemDetailContainer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <ItemListContainer gibberish= {gibberish}/>
       <ItemCount stock={stock} initial={initial}/>
+      <ItemDetailContainer />
 
     </Router>
   );
