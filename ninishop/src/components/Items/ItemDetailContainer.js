@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const traerProducto = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(donitas);
-    }, 2000);
+    }, 0);
   });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
   console.log(dona);
   return (
     <div>
-      <ItemDetail  />
+      <ItemDetail donita={dona} />
     </div>
   );
 };
