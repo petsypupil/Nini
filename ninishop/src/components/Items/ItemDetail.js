@@ -1,6 +1,16 @@
-import React from "react";
+
+import {CartContext} from '../Context/cartContext'
+import {useContext} from 'react'
 
 function ItemDetail({ donita }) {
+
+    const {cartList, agregarAlCarrito} =  useContext(CartContext)
+
+
+    function onAdd() {
+        agregarAlCarrito(donita)
+    }
+
   return (
     <div className="container">
       <div className="item">
@@ -9,6 +19,7 @@ function ItemDetail({ donita }) {
         <p className="info"> Precio:$${donita.precio}</p>
         <p className="info"> descripcion:{donita.descripcion}</p>
         <p className="info"> stock: {donita.stock}</p>
+        <button onClick={onAdd}> agregar al carrito </button>
       </div>
     </div>
   );
