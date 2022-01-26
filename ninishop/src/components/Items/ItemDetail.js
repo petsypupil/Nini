@@ -4,11 +4,11 @@ import {useContext} from 'react'
 
 function ItemDetail({ donita }) {
 
-    const {cartList, agregarAlCarrito} =  useContext(CartContext)
+    const {cartList, agregarAlCarrito} =  useContext(CartContext);
 
 
     function onAdd() {
-        agregarAlCarrito(donita)
+        agregarAlCarrito(donita.id)
     }
 
   return (
