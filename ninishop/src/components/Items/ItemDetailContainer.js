@@ -25,6 +25,7 @@ const ItemDetailContainer = () => {
       setdona(Response.find((donitas) => donitas.id === pathParams.id))
     );
   }, []);
+  
   return (
     <div>
       <ItemDetail donita={dona} />

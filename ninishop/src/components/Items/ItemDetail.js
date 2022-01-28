@@ -5,7 +5,7 @@ import ItemCount from '../ItemCount';
 
 function ItemDetail({ donita }) {
 
-    const {cartList, agregarAlCarrito, getItemIndex } =  useContext(CartContext);
+    const {agregarAlCarrito, getItemIndex} =  useContext(CartContext);
 
 
     function onAdd() {
@@ -20,7 +20,7 @@ function ItemDetail({ donita }) {
         <p className="info"> Precio:$${donita.precio}</p>
         <p className="info"> descripcion:{donita.descripcion}</p>
         <p className="info"> stock: {donita.stock}</p>
-        { getItemIndex(donita.id) >= 0 ? <ItemCount idDonita={donita.id} /> : <button onClick={onAdd}> agregar al carrito </button>}
+        { getItemIndex(donita.id) >= 0 ? <ItemCount idItem={donita.id} /> : <button onClick={onAdd}> Agregar al carrito </button>}
       </div>
       
     </div>
