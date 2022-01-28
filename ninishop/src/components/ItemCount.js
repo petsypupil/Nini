@@ -1,35 +1,23 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { CartContext } from './Context/cartContext';
 
-function ItemCount({stock, initial}) {
+const stock = 30;
+const initial = 1;
 
-    const [count, setCount] = useState(initial)
+function ItemCount( idDonita ) {
 
-    const suma = () => {
-        
-        if (count < stock){
-            
-            setCount(count + 1)
+    const { cartList, agregarAlCarrito, quitarDelCarrito, getItem } =  useContext(CartContext);
 
-        }
-    }
-
-    const resta = () => {
-
-        if (count > initial ){
-            setCount(count - 1)
-
-        }
-    }
-    
+    const cartData = getItem(idDonita);
 
     return (
         <div>
-            <button onClick={suma}> mas </button>
-            {count}
-            <button onClick={resta}> menos </button>
+            <button onClick={() => quitarDelCarrito(idDonita)}> menos </button>
+            {cartData.cant}
+            <button onClick={() => agregarAlCarrito(idDonita)}> mas </button>
         </div>
     )
+    
 }
-
 export default ItemCount

@@ -9,8 +9,7 @@ import { CartContextProvider } from "./components/Context/cartContext";
 
 function App() {
   const gibberish = "jdfksjbkjsbgakbgsjfvjfvx, v";
-  const stock = 30;
-  const initial = 1;
+  
 
   return (
     <CartContextProvider>

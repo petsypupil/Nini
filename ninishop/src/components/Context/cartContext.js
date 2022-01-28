@@ -8,19 +8,31 @@ export const CartContextProvider = ({ children }) => {
 
   function agregarAlCarrito(idItem) {
     const itemIndex = getItemIndex(idItem);
-    console.log(itemIndex);
     if (itemIndex >= 0) {
-      let newCartList = cartList;
       cartList[itemIndex].cant += 1;
       setCartlist(cartList);
     } else {
-      setCartlist([...cartList, { id: idItem, cant: 0 }]);
+      setCartlist([...cartList, { id: idItem, cant: 1 }]);
     }
-    console.log(cartList);
+  }
+
+  function quitarDelCarrito(idItem){
+    const itemIndex = getItemIndex(idItem);
+      if(cartList[itemIndex].cant <= 1){
+        setCartlist(...cartList.splice(itemIndex,1));
+      } else {
+        cartList[itemIndex].cant -= 1;
+        setCartlist(cartList);
+      }
+      
   }
 
   const getItemIndex = (idItem) => {
     return cartList.findIndex((cartItem) => cartItem.id === idItem);
+  };
+
+  const getItem = (idItem) => {
+    return cartList.find((cartItem) => cartItem.id === idItem);
   };
 
   return (
@@ -28,6 +40,9 @@ export const CartContextProvider = ({ children }) => {
       value={{
         cartList,
         agregarAlCarrito,
+        quitarDelCarrito,
+        getItemIndex,
+        getItem,
       }}
     >
       {children}
