@@ -2,7 +2,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import styled from 'styled-components';
 
 export const Iconito = styled(TiShoppingCart) `
-  color: white;
+  color: grey;
   font-size: 1.8rem;
   position: absolute;
   display: block;
@@ -10,4 +10,5 @@ export const Iconito = styled(TiShoppingCart) `
   cursor: pointer;
   right: 0;
 `;
+
 

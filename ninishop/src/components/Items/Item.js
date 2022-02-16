@@ -59,16 +59,18 @@ export function Item({ donita }) {
   return (
     <div className="container">
       <div className="item">
-        <Link to={`/item/${donita.id}`}>
-          <img
-            className="donitas"
-            src={require(`./resources/${donita.img}.jpg`)}
-          />
-        </Link>
-        <h3 className="Titulo">{donita.nombre}</h3>
-        <p className="info"> Precio:$${donita.precio}</p>
-        <p className="info"> descripcion:{donita.descripcion}</p>
-      </div>
+          <div className="img">
+             <Link to={`/item/${donita.id}`}>
+              <img
+              className="donitas"
+              src={require(`./resources/${donita.img}.jpg`)}/>
+              </Link>
+          </div>
+          <div className="texto">
+            <h3 className="titulo">{donita.nombre}</h3>
+            <p className="info"> Precio:$${donita.precio}</p>
+          </div>
+        </div>
     </div>
   );
 }

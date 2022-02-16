@@ -10,7 +10,7 @@ export const CartContextProvider = ({ children }) => {
     const itemIndex = getItemIndex(idItem);
     if (itemIndex >= 0) {
       cartList[itemIndex].cant += 1;
-      setCartlist(cartList);
+      setCartlist([...cartList]);
     } else {
       setCartlist([...cartList, { id: idItem, cant: 1 }]);
     }
@@ -19,10 +19,10 @@ export const CartContextProvider = ({ children }) => {
   function quitarDelCarrito(idItem){
     const itemIndex = getItemIndex(idItem);
       if(cartList[itemIndex].cant <= 1){
-        setCartlist(...cartList.splice(itemIndex,1));
+        setCartlist([cartList.splice(itemIndex,1)]);
       } else {
         cartList[itemIndex].cant -= 1;
-        setCartlist(cartList);
+        setCartlist([...cartList]);
       }
       
   }
